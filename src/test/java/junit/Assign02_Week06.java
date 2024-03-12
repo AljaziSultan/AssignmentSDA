@@ -12,7 +12,6 @@ public class Assign02_Week06 extends testBase{
 //    2/4
 
 
-//   Verify the visibility of Perfect text.
 
     @Test
     public void dragAndDrop() {
@@ -37,8 +36,7 @@ public class Assign02_Week06 extends testBase{
         new Actions(driver).dragAndDrop(driver.findElement(button5000), driver.findElement(amountCreditSide)).perform();
         new Actions(driver).dragAndDrop(driver.findElement(button5000), driver.findElement(amountDebitSide)).perform();
 
-
-
+//   Verify the visibility of Perfect text.
         WebElement verifyText = driver.findElement(By.xpath("//a[text()='Perfect!']"));
         Assertions.assertTrue(verifyText.isDisplayed());
 
