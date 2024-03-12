@@ -1,9 +1,13 @@
-package junit;
+package teamTasks;
 
 //import org.junit.jupiter.api.Assertions;
+import junit.testBase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
 //import tests.testng.Tests;
 
 public class FileDownload extends testBase {
@@ -14,7 +18,7 @@ public class FileDownload extends testBase {
      * Verify if the file downloaded successfully.
      */
     @Test
-    public void uploadFile(){
+    public void uploadFile() throws InterruptedException {
 
         bot.navigate("https://opensource-demo.orangehrmlive.com/");
         By username = By.name("username");
@@ -54,8 +58,11 @@ public class FileDownload extends testBase {
             driver.findElement(By.xpath("//a[text()='Download']")).click();
             return true;
         });
+        Thread.sleep(5000);
 
-        String fileUploadPath = "Downloads\\importData.csv";
+        String path = System.getProperty("user.home") + "/Downloads/importData.csv";
+        boolean isExist = Files.exists(Paths.get(path));
+        Assertions.assertTrue(isExist);
 
     }
 }
