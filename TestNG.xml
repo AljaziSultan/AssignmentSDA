@@ -1,0 +1,9 @@
+<suite name ="Suite">
+    <test name ="Test">
+       <classes>
+           <class name ="testng.TestClass">
+
+           </class>
+       </classes>
+    </test>
+</suite>
