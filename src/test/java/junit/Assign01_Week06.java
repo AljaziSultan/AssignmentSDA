@@ -28,7 +28,7 @@ public class Assign01_Week06 extends testBase{
 
 
         //Click on the “Click Here” button
-       driver.findElement(By.xpath("//a[text()='Click Here']")).click();
+//       driver.findElement(By.xpath("//a[text()='Click Here']")).click();
 
 
         //Verify the new window title is “New Window”
