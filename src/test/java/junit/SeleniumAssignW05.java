@@ -182,6 +182,7 @@ When each option is selected, print the following texts on the console.
     }
 
     //    Task05
+//
     //Go to URL: http://demo.automationtesting.in/Alerts.html
     //Click "Alert with OK" and click 'click the button to display an alert box:’
     //Accept Alert(I am an alert box!) and print alert on console.
