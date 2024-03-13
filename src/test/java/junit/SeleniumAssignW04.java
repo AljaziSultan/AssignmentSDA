@@ -147,6 +147,7 @@ public class SeleniumAssignW04 {
     }
     //    __________________________________________________________________________________________
 //    Task 05
+//
 //    Go to URL: https://www.linkedin.com/
 //    Locate the "Email or phone", "password", "Sign in" button using absolute xpath and relative xpath
     @Test
