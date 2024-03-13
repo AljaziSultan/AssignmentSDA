@@ -19,6 +19,7 @@ public class Assign04_Week06 extends testBase{
 
 //        Scroll to the bottom of the page using a robot
         Robot robot = new Robot();
+        robot.delay(10);
         robot.mouseWheel(4);
         Thread.sleep(5000);
 
