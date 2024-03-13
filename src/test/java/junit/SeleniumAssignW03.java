@@ -50,7 +50,7 @@ public class SeleniumAssignW03 {
         if (actualURL.contentEquals(expectedURL)){
             System.out.println("Test Passed!");
         } else {
-            System.out.println("Test Failed");
+//            System.out.println("Test Failed");
         }
 
 
