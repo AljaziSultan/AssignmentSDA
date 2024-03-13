@@ -20,6 +20,7 @@ public abstract class testBase {
     protected Wait<WebDriver> wait;
     public static Logger logger;
     public ActionsBot bot;
+//
 
     @BeforeAll
     public static void beforeAll(){
