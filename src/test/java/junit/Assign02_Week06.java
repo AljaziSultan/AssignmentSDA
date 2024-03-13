@@ -31,10 +31,11 @@ public class Assign02_Week06 extends testBase{
 //   Drag and drop the 5000 button to the Amount section in CREDIT SIDE
 //   Drag and drop the 5000 button to the Amount section in DEBIT SIDE
         By button5000 = By.xpath("//li[contains(@id,'fourth')]");
+        By button5000_2 = By.xpath("//li[contains(@id,'fourth')]");
         By amountDebitSide = By.xpath("//ol[contains(@id,'amt7')]");
         By amountCreditSide = By.xpath("//ol[contains(@id,'amt8')]");
         new Actions(driver).dragAndDrop(driver.findElement(button5000), driver.findElement(amountCreditSide)).perform();
-        new Actions(driver).dragAndDrop(driver.findElement(button5000), driver.findElement(amountDebitSide)).perform();
+        new Actions(driver).dragAndDrop(driver.findElement(button5000_2), driver.findElement(amountDebitSide)).perform();
 
 //   Verify the visibility of Perfect text.
         WebElement verifyText = driver.findElement(By.xpath("//a[text()='Perfect!']"));
