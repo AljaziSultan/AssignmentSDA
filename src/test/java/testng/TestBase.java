@@ -62,6 +62,7 @@ public abstract class TestBase {
     @AfterMethod
     public void afterMethod(){
         logger.info("Quitting Browser");
+
         driver.quit();
     }
 }
