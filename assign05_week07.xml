@@ -4,6 +4,7 @@
     <test name="Chrome Test">
         <parameter name="target-browser" value="chrome"/>
         <classes>
+
             <class name="testng.Assign05_Week07"/>
         </classes>
     </test>
