@@ -44,21 +44,15 @@ public class Assign03_Week07 {
              driver.get("https://practicetestautomation.com/practice-test-login/");
 
         logger.info("Entering the data");
-            Thread.sleep(4000);
-            driver.findElement(By.xpath("//input[@name,'username']")).sendKeys("student" );
-            Thread.sleep(4000);
+            driver.findElement(By.xpath("//input[contains(@name,'username')]")).sendKeys("student" );
             driver.findElement(By.xpath("//input[contains(@name,'password')]")).sendKeys("incorrectPassword");
-            Thread.sleep(4000);
             driver.findElement(By.xpath("//button[contains(@id,'submit')]")).click();
-            Thread.sleep(4000);
+
 
 
         logger.warning("SoftAssertion Message");
-            Thread.sleep(4000);
             WebElement inText = driver.findElement(By.xpath("//div[contains(@id,'error')]"));
-            Thread.sleep(4000);
             softAssert.assertTrue(inText.isDisplayed());
-            Thread.sleep(4000);
             softAssert.assertEquals(inText, "Your password is invalid!");
 
 
