@@ -29,14 +29,15 @@ public class Assign04_Week07 extends TestBase{
         }
 
     @Test(dataProvider = "getData")
-    public void dataProviderClass(String word) {
+    public void dataProviderClass(String word) throws InterruptedException {
             bot.navigate("http://opencart.abstracta.us/index.php?route=account/login");
-//    wait.until(f->{
-            driver.findElement(By.xpath("//input[@name,'search']")).sendKeys(word+ Keys.ENTER);
-//            driver.findElement(By.xpath("//input[contains(@name,'password')]")).sendKeys(password);
-//        return true;
-//    });
 
+        Thread.sleep(4000);
+        driver.findElement(By.xpath("//input[@id,'input-email']")).sendKeys("clarusway@gmail.com" );
+        Thread.sleep(4000);
+        driver.findElement(By.xpath("//input[contains(@id,'input-password')]")).sendKeys("123456789");
+        Thread.sleep(4000);
+            driver.findElement(By.xpath("//input[@name,'search']")).sendKeys(word+ Keys.ENTER);
             driver.findElement(By.xpath("//button[contains(@type,'submit')]")).click();
             wait.until(f->{
         WebElement inText = driver.findElement(By.xpath("//div[contains(@class,'oxd-alert-content--error')]"));
@@ -44,7 +45,6 @@ public class Assign04_Week07 extends TestBase{
 
                 return true;
     });
-//        Assert.assertTrue(inText.isDisplayed());
 
 
 
