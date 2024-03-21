@@ -54,6 +54,7 @@ public abstract class TestBaseCrossBrowsers {
         bot = new ActionsBot(driver, wait, logger);
     }
 
+
     @AfterMethod
     public void afterMethod(){
         logger.info("Quitting Browser");
