@@ -29,22 +29,17 @@ public class Assign04_Week07 extends TestBase{
         }
 
     @Test(dataProvider = "getData")
-    public void dataProviderClass(String word) throws InterruptedException {
+    public void dataProviderClass(String word)  {
             bot.navigate("http://opencart.abstracta.us/index.php?route=account/login");
-
-        Thread.sleep(4000);
-        driver.findElement(By.xpath("//input[@id,'input-email']")).sendKeys("clarusway@gmail.com" );
-        Thread.sleep(4000);
+        driver.findElement(By.xpath("//input[contains(@id,'input-email')]")).sendKeys("clarusway@gmail.com" );
         driver.findElement(By.xpath("//input[contains(@id,'input-password')]")).sendKeys("123456789");
-        Thread.sleep(4000);
-            driver.findElement(By.xpath("//input[@name,'search']")).sendKeys(word+ Keys.ENTER);
-            driver.findElement(By.xpath("//button[contains(@type,'submit')]")).click();
-            wait.until(f->{
+        driver.findElement(By.xpath("//input[@value='Login']")).click();
+
+            driver.findElement(By.xpath("//input[contains(@name,'search')]")).sendKeys(word+ Keys.ENTER);
+
         WebElement inText = driver.findElement(By.xpath("//div[contains(@class,'oxd-alert-content--error')]"));
                 Assert.assertTrue(inText.isDisplayed());
 
-                return true;
-    });
 
 
 
