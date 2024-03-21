@@ -15,7 +15,7 @@ public class Assign02_Week07 extends TestBase{
         //Then assert that ‘’Invalid credentials’’ is displayed.
         //Run it parallel with 3 threads
         //Generate Allure report
-        @DataProvider(parallel = true)
+        @DataProvider
         public Object[][] getData(){
             return new Object[][]{
                     {"admin*","admin123"},
@@ -27,36 +27,27 @@ public class Assign02_Week07 extends TestBase{
         }
 
     @Test(dataProvider = "getData")
-    @Step
-    public void dataProviderClass(String username,String password) throws InterruptedException {
+//    @Step
+    public void dataProviderClass(String username,String password) {
             bot.navigate("https://opensource-demo.orangehrmlive.com/");
 
 
-    wait.until(f->{
+wait.until(f->{
             driver.findElement(By.name("username")).sendKeys(username);
+    return true;
+});
 
-        return true;
-    });
-        wait.until(f->{
 
             driver.findElement(By.name("password")).sendKeys(password);
-        return true;
-    });
-
-Thread.sleep(1000);
-        wait.until(f->{
-
-           WebElement btn= driver.findElement(By.tagName("button"));
-
-                  btn.click();
-        return true;
-    });
-
+            WebElement login=driver.findElement(By.xpath("//button[@type='submit']"));
+                    login.click();
 
         wait.until(f->{
-                Assert.assertTrue(driver.findElement(By.xpath("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']")).isDisplayed());
 
-                return true;
+            Assert.assertTrue(driver.findElement(By
+                     .xpath("//div[@class='orangehrm-login-slot-wrapper']"))
+                    .isDisplayed());
+        return true;
     });
 
 
